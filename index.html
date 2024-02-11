@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+    <style>
+        body {
+            display: flex;
+            background-color: #1C1C1C;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .canvas {
+            width: 130px;
+            height: 100px;
+            text-align: center;
+            border-radius: 25px;
+            color: white;
+            background-color: #ff9500dd;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        <p id="time"></p>
+        <p id="date"></p>
+    </div>
+</body>
+<script>
+    const clock_date = document.getElementById("date")
+    const clock_time = document.getElementById("time")
+    setInterval(function () {
+        let date = new Date();
+        clock_time.innerHTML = date.toLocaleTimeString()
+        clock_date.innerHTML = date.toLocaleDateString()
+    }, 1000);
+</script>
+
+</html>
